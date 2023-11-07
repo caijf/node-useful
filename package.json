@@ -1,0 +1,44 @@
+{
+  "name": "node-useful",
+  "version": "0.0.0",
+  "description": "Node.js 工具方法",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js,.mjs,.jsx,.ts,.tsx src",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier --write **/*",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,mjs,jsx,ts,tsx}": "eslint",
+    "**/*.{css,scss,less,js,mjs,jsx,ts,tsx,json,md}": "prettier -w"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caijf/node-useful.git"
+  },
+  "author": "caijf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caijf/node-useful/issues"
+  },
+  "homepage": "https://github.com/caijf/node-useful#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.53.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}
