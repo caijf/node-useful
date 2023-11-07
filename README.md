@@ -2,7 +2,7 @@
 
 Node.js 工具方法。[点击查看在线文档]。
 
-[![npm][npm]][npm-url] ![GitHub](https://img.shields.io/github/license/caijf/node-useful.svg)
+[![npm][npm]][npm-url] [![Build and Deploy Docs](https://github.com/caijf/node-useful/actions/workflows/ci.yml/badge.svg)](https://github.com/caijf/node-useful/actions/workflows/ci.yml) ![GitHub](https://img.shields.io/github/license/caijf/node-useful.svg)
 
 ## 安装
 
