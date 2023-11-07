@@ -2,11 +2,17 @@
   "name": "node-useful",
   "version": "0.0.0",
   "description": "Node.js 工具方法",
-  "main": "index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:coverage:local": "cross-env COVERAGE_LOCAL=1 jest --coverage --detectOpenHandles && open ./coverage/lcov-report/index.html",
+    "build": "npm run build:es && npm run build:cjs && npm run build:types",
+    "build:es": "rm -rf dist/es && tsc --outDir dist/es -p tsconfig.build.json -m esnext",
+    "build:cjs": "rm -rf dist/cjs && tsc --outDir dist/cjs -p tsconfig.build.json",
+    "build:types": "rm -rf dist/types && tsc --outDir dist/types -p tsconfig.build.json -d --emitDeclarationOnly",
     "build:doc": "npm run doc",
     "doc": "rm -rf docs && rm -rf docs-src && tsc -p tsconfig.build.json --outDir docs-src && jsdoc -c conf.json && rm -rf docs-src",
     "doc:open": "open ./docs/index.html",
@@ -14,8 +20,12 @@
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --write **/*",
     "prepare": "husky install",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "prepublishOnly": "npm test && npm run build"
   },
+  "files": [
+    "dist"
+  ],
   "lint-staged": {
     "**/*.{js,mjs,jsx,ts,tsx}": "eslint",
     "**/*.{css,scss,less,js,mjs,jsx,ts,tsx,json,md}": "prettier -w"
