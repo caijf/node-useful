@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:coverage:local": "cross-env COVERAGE_LOCAL=1 jest --coverage --detectOpenHandles && open ./coverage/lcov-report/index.html",
     "build:doc": "npm run doc",
     "doc": "rm -rf docs && rm -rf docs-src && tsc -p tsconfig.build.json --outDir docs-src && jsdoc -c conf.json && rm -rf docs-src",
     "doc:open": "open ./docs/index.html",
     "lint": "eslint --ext .js,.mjs,.jsx,.ts,.tsx src",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --write **/*",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "tsc": "tsc --noEmit"
   },
   "lint-staged": {
     "**/*.{js,mjs,jsx,ts,tsx}": "eslint",
@@ -40,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "cheerio": "1.0.0-rc.12",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "docdash": "^2.0.2",
     "eslint": "^8.53.0",

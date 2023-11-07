@@ -37,12 +37,17 @@ describe('getBuffer', () => {
   //   expect($('table')).toBeDefined();
   // })
 
-  // it('remote image', async () => {
-  //   const url = 'https://fastly.picsum.photos/id/27/360/160.jpg?hmac=5J_4prvaOqKjKy14iOjHoTNQKVVWCL45jOFBrZhmmaE';
-  //   const buf = await getBuffer(url);
-  //   expect(Buffer.isBuffer(buf)).toBe(true);
-  //   expect(buf.length).toBe(10337);
-  // })
+  it(
+    'remote image',
+    async () => {
+      const url =
+        'https://fastly.picsum.photos/id/27/360/160.jpg?hmac=5J_4prvaOqKjKy14iOjHoTNQKVVWCL45jOFBrZhmmaE';
+      const buf = await getBuffer(url);
+      expect(Buffer.isBuffer(buf)).toBe(true);
+      expect(buf.length).toBe(10337);
+    },
+    30 * 1000
+  );
 
   it('buffer', async () => {
     const buf1 = Buffer.from('hello world');

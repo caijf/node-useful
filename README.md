@@ -1,6 +1,6 @@
 # node-useful
 
-Node.js 工具方法
+Node.js 工具方法。[点击查看在线文档]。
 
 [![npm][npm]][npm-url] ![GitHub](https://img.shields.io/github/license/caijf/node-useful.svg)
 
@@ -37,3 +37,4 @@ async function something() {
 
 [npm]: https://img.shields.io/npm/v/node-useful.svg
 [npm-url]: https://npmjs.com/package/node-useful
+[点击查看在线文档]: https://caijf.github.io/node-useful/index.html
