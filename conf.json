@@ -1,0 +1,51 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": ["docs-src", "README.md"],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": ["plugins/markdown"],
+  "opts": {
+    "template": "node_modules/docdash",
+    "encoding": "utf8",
+    "destination": "docs/",
+    "recurse": true,
+    "verbose": true
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "docdash": {
+    "openGraph": {
+      "title": "node-useful",
+      "type": "website",
+      "image": "",
+      "site_name": "node-useful",
+      "url": "https://caijf.github.io/node-useful/index.html"
+    },
+    "meta": {
+      "title": "node-useful ",
+      "description": "Node.js 工具方法",
+      "keyword": "node, util, modules, es6, es2015"
+    },
+    "search": true,
+    "menu": {
+      "Github": {
+        "href": "https://github.com/caijf/node-useful",
+        "target": "_blank",
+        "class": "menu-item",
+        "id": "repo_link"
+      },
+      "Changelog": {
+        "href": "https://github.com/caijf/node-useful/releases",
+        "target": "_blank",
+        "class": "menu-item",
+        "id": "repo_link"
+      }
+    }
+  }
+}
