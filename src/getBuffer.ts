@@ -41,11 +41,7 @@ function getBuffer(input: string | Buffer): Promise<Buffer> {
     } else {
       // 本地路径
       const stream = fs.createReadStream(input);
-      streamToBuffer(stream)
-        .then((buffer) => {
-          resolve(buffer);
-        })
-        .catch(reject);
+      streamToBuffer(stream).then(resolve).catch(reject);
     }
   });
 }
