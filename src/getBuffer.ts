@@ -4,10 +4,10 @@ import fs from 'fs';
 import streamToBuffer from './streamToBuffer';
 
 /**
- * 获取本地或远程文件 buffer
+ * 获取本地或远程文件 buffer 。
  *
  * @since 0.0.1
- * @param input 本地或远程文件地址
+ * @param input 本地或远程文件地址。远程地址仅支持 `http` 或 `https` 协议。
  * @returns buffer 对象
  * @example
  *
